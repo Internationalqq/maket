@@ -1,0 +1,390 @@
+/* =======================================
+   Стили шрифтов
+========================================= */
+
+@font-face {
+  font-family: "TTLakes";
+  src: url("./fonts/TTLakes-Regular.woff") format("woff");
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: "TTLakes";
+  src: url("./fonts/TTLakes-Bold.woff") format("woff");
+  font-weight: bold;
+}
+
+@font-face {
+  font-family: "TTLakes";
+  src: url("./fonts/TTLakes-Medium.woff") format("woff");
+  font-weight: 500;
+}
+
+/* =======================================
+   Общие стили
+========================================= */
+
+* {
+  padding: 0;
+  margin: 0;
+  border: none;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+a,
+a:link,
+a:visited {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+li {
+  list-style: none;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "TTLakes", sans-serif;
+}
+
+/* =======================================
+   Header
+========================================= */
+
+.header__container {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 24px 16px;
+  min-width: 320px;
+  width: 100%;
+}
+
+.header__button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border: none;
+  border-radius: 50%;
+  background-color: #ff3e79;
+  cursor: pointer;
+}
+
+.header__logo-link {
+  position: relative;
+  margin-right: auto;
+}
+
+.header__logo-link::before {
+  content: "";
+  position: absolute;
+  right: -16px;
+  top: 25%;
+  width: 2px;
+  height: 32px;
+  background-color: #eaeaea;
+  border-radius: 1px;
+}
+
+.header__button--call,
+.header__button--messages,
+.header__button--contacts {
+  display: none;
+}
+
+/* =======================================
+   Main (Основной контент)
+========================================= */
+
+.main {
+  height: 100vh;
+  min-width: 320px;
+  width: 100%;
+  padding-top: 24px;
+  background-color: #f8f8f8;
+}
+
+.services-title {
+  position: relative;
+  padding: 0 0 0 16px;
+  font-size: 28px;
+  line-height: 40px;
+}
+
+.services-title::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 4px;
+  height: 100%;
+  background-color: #41f6d7;
+  border-radius: 0 15px 15px 0;
+}
+.services-actions {
+  display: none;
+}
+
+.main__carousel {
+  margin: 24px 0;
+  padding: 0 16px;
+}
+
+.carousel__list {
+  display: flex;
+  overflow-x: scroll;
+  scrollbar-width: none; /* Для Firefox */
+  -webkit-overflow-scrolling: touch; /* Для плавной прокрутки на мобильных устройствах */
+}
+
+/* Скрыть скроллбар */
+.carousel__list::-webkit-scrollbar {
+  display: none;
+}
+
+.carousel__item {
+  font-size: 16px;
+  line-height: 24px;
+  white-space: nowrap;
+  padding: 8px 16px 8px 16px;
+  border-radius: 6px;
+  border: 2px solid transparent;
+}
+
+.carousel__item:hover {
+  border: 2px solid #b8ffec;
+  background-color: #ffffff;
+}
+
+.carousel__item a {
+  color: #7e7e82;
+}
+.services-description__container {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 0 16px;
+}
+
+.services-description__text {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  max-height: 100px;
+  line-height: 1.5;
+  -webkit-line-clamp: 4;
+  color: #1b1c21;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 18px;
+}
+
+.services-description__title {
+  display: none;
+}
+
+.services-description__link {
+  margin: 0 0 16px 0;
+  display: flex;
+  align-items: center;
+  color: #1b1c21;
+}
+
+.services-description__arrow {
+}
+
+.services-description__link span {
+  font-weight: 500;
+}
+
+.services-description__image {
+  max-width: 100%;
+}
+
+/* =======================================
+   Медиазапросы
+========================================= */
+
+/* 320px и меньше (скрыть кнопки) */
+@media (max-width: 768px) {
+  .header__button--call,
+  .header__button--messages,
+  .header__button--contacts {
+    display: none;
+  }
+}
+
+/* 321px - 768px (показать кнопки) */
+@media (min-width: 768px) {
+  .header__container {
+    padding: 24px;
+  }
+
+  .header__logo-link {
+    position: relative;
+    margin-left: 16px;
+  }
+
+  .header__logo-link::before {
+    content: "";
+    position: absolute;
+    left: -20px;
+    top: 25%;
+    width: 2px;
+    height: 32px;
+    background-color: #eaeaea;
+    border-radius: 1px;
+  }
+
+  .header__button--call,
+  .header__button--messages,
+  .header__button--contacts {
+    display: flex;
+  }
+
+  .header__button--contacts {
+    margin: 0 16px 0 0;
+    position: relative;
+  }
+
+  .header__button--contacts::before {
+    content: "";
+    position: absolute;
+    right: -16px;
+    top: 10%;
+    width: 2px;
+    height: 32px;
+    background-color: #eaeaea;
+    border-radius: 1px;
+  }
+
+  .services-title {
+    padding: 0 0 0 24px;
+  }
+
+  .main__carousel {
+    min-width: 100%;
+    max-width: 100%;
+    margin: 32px 0;
+    padding: 0 24px;
+  }
+
+  .main__services-description {
+    display: flex;
+    padding: 0 24px;
+  }
+
+  .services-description__container {
+    flex: 1;
+    max-width: 50%;
+    padding: 0 48px 0 0;
+  }
+
+  .services-description__image-container {
+    flex: 1;
+    display: flex;
+    max-width: 100%;
+  }
+
+  .services-description__image {
+    border-radius: 5px;
+  }
+}
+
+/* 769px и выше (для больших экранов) */
+@media (min-width: 1120px) {
+  .header {
+    display: none;
+  }
+
+  .main {
+    padding-top: 42px;
+  }
+
+  .main__services {
+    display: flex;
+    align-items: center;
+    margin-right: 32px;
+  }
+
+  .services-title {
+    margin-right: auto;
+    padding: 0 0 0 32px;
+  }
+
+  .services-actions {
+    display: flex;
+    align-items: center;
+  }
+
+  .main__carousel {
+    margin: 8px 0;
+    padding: 0 32px;
+  }
+
+  .services-description {
+    display: flex;
+    padding: 0 32px;
+  }
+
+  .services-button {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border: none;
+    border-radius: 50%;
+    background-color: #ff3e79;
+    cursor: pointer;
+  }
+
+  .services-button-text {
+    margin: 0 8px 0 0;
+    color: #1b1c21;
+    font-size: 16px;
+    line-height: 24px;
+  }
+
+  .services-button--apply {
+    margin: 0 32px 0 0;
+  }
+
+  .services-description__container {
+    flex: 1;
+    max-width: 50%;
+    padding: 0 32px 0 0;
+  }
+
+  .services-description__title {
+    padding: 0 0 16px 48px;
+    display: block;
+    font-size: 16px;
+    font-weight: normal;
+    line-height: 24px;
+    color: #7e7e82;
+  }
+
+  .services-description__image-container {
+    flex: 1;
+    display: flex;
+    max-width: 100%;
+  }
+
+  .services-description__image {
+    border-radius: 5px;
+  }
+}
